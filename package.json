@@ -4,7 +4,8 @@
   "description": "A React component Library",
   "scripts": {
     "rollup": "rollup -c",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Sanyam Jain",
@@ -17,6 +18,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^10.0.1",
     "@types/react": "^18.0.26",
+    "husky": "^8.0.3",
     "prettier": "^2.8.1",
     "rollup": "^3.9.1",
     "rollup-plugin-dts": "^5.1.0",
