@@ -24,7 +24,10 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: ['**/__tests__', '**/*.test.tsx', '**/*.stories.tsx'],
+      }),
       postcss(),
     ],
   },
@@ -32,6 +35,12 @@ export default [
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.css$/],
+    external: [
+      /\.css$/,
+      /\.stories.tsx/,
+      '**/__tests__',
+      '**/*.test.tsx',
+      '**/*.stories.tsx',
+    ],
   },
 ];
