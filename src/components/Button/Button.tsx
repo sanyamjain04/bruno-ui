@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { HTMLAttributes, ReactNode } from 'react';
 import './Button.css';
 
-export interface ButtonProps {
-  label: string;
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
 }
 
-const Button = (props: ButtonProps) => {
+const Button = ({ children, ...props }: ButtonProps) => {
   return (
-    <button className="bg-slate-50 text-red-400 rotate-45">
-      {props.label}
+    <button className="bg-slate-50 text-red-400 p-2" {...props}>
+      {children}
     </button>
   );
 };

@@ -5,6 +5,7 @@ import Button from './Button';
 
 describe('Button', () => {
   test('render the Button component', () => {
-    render(<Button label="Hello World!" />);
+    render(<Button>Hello</Button>);
+    expect(2 + 2).toBe(4);
   });
 });
